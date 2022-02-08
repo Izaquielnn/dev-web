@@ -3,8 +3,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var mongoose = require('mongoose');
+
+var db = "mongodb+srv://plantinhas:ztcPC4BS3Io5nOoG@cluster0.0hzwx.mongodb.net/plantinhas?retryWrites=true&w=majority";
+
+mongoose.connect(db)
+    .then(() => console.log(`Connected to ${db}`))
+    .catch(err =>
+        console.log(`Error to connect on ${db}`, err)
+    );
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
