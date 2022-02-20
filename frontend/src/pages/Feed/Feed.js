@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Post from './Post';
-import PlantinhaAPI from '../services/PlantinhaApi';
+import Post from '../Post/Post';
+import PlantinhaAPI from '../../services/PlantinhaApi';
 
 import './Feed.css';
 

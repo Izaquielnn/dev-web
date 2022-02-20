@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Feed from './pages/Feed';
+import Feed from './pages/Feed/Feed';
 
 function App() {
   return (

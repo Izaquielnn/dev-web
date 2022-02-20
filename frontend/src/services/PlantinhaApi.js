@@ -1,6 +1,6 @@
 class PlantinhaAPI {
     constructor() {
-        this.apiURL = "http://localhost:3000";
+        this.apiURL = "http://localhost:3001";
     }
 
     async getPosts() {

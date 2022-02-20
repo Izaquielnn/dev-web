@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import avatar from '../assets/avatar.png';
-import comments from '../assets/comments.png';
-import like from '../assets/like.png';
-import liked from '../assets/liked.png';
+import avatar from '../../assets/avatar.png';
+import comments from '../../assets/comments.png';
+import like from '../../assets/like.png';
+import liked from '../../assets/liked.png';
 
 import './Post.css';
 
