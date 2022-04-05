@@ -2,11 +2,31 @@
   display: grid;
   grid-template-columns: auto 700px auto;
   grid-template-areas:
-		"nav nav nav"
-		". feed ."
-		;
+    ". nav nav"
+    ". feed ."
+  ;
 }
 
 .Feed {
   grid-area: feed;
+}
+
+.Header {
+  grid-area: nav;
+}
+
+button {
+  color: #3F6345;
+  border: none;
+  background-color: #D8D8D8;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+button:hover {
+  background-color: #c5c4c4;
+}
+
+button:active {
+  transform: translateY(1px);
 }

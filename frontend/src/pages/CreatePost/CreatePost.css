@@ -1,0 +1,68 @@
+.Modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.Content {
+    width: 600px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 20px;
+}
+
+.ActionButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+input,
+textarea {
+    background-color: #EDEDED;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    color: #646464;
+    font-size: 16px;
+    outline-color: #3F6345;
+    margin: 5px 0;
+}
+
+.TitleInput {
+    color: #3F6345;
+    font-size: 26px;
+}
+
+.ActionButtons button {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.CloseButton {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 24px;
+    border-radius: 100%;
+    font-weight: bold;
+    color: #646464;
+}
