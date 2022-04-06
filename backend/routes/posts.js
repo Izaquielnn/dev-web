@@ -4,7 +4,8 @@ var PostController = require('../src/controllers/PostController');
 var UserMiddleware = require('../src/middleware/UserMiddleware');
 
 router.get('/', PostController.getAll);
-router.post('/', UserMiddleware.authorize, PostController.insert)
+router.post('/', UserMiddleware.authorize, PostController.insert);
+router.post('/:id', UserMiddleware.authorize, PostController.comment)
 router.put('/:id', UserMiddleware.authorize, PostController.update);
 router.delete('/:id', UserMiddleware.authorize, PostController.delete);
 

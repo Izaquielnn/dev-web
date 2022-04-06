@@ -13,7 +13,7 @@ class PostService {
     async getAll(query) {
         try {
 
-            let items = await this.model.find(query).populate('author');
+            let items = await this.model.find(query).populate('author').populate('comments.author');
             let total = await this.model.count();
 
             return {
@@ -39,6 +39,25 @@ class PostService {
                     error: false,
                     item
                 };
+        } catch (error) {
+            console.log('error', error);
+            return {
+                error: true,
+                statusCode: 500,
+                message: error.errmsg || 'Not able to create post',
+                errors: error.errors
+            };
+        }
+    }
+
+    async comment(id, data) {
+        try {
+            let item = await this.model.findByIdAndUpdate(id, { $push: { comments: data } }, { new: true });
+            if (!item) return { error: true, statusCode: 404 };
+            return {
+                error: false,
+                item
+            };
         } catch (error) {
             console.log('error', error);
             return {

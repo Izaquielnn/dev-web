@@ -22,6 +22,19 @@ class Post {
                 type: String,
                 required: true,
             },
+            comments: [
+                {
+                    author: {
+                        type: mongoose.Schema.Types.ObjectId,
+                        ref: 'user',
+                        required: true,
+                    },
+                    comment: {
+                        type: String,
+                        required: true,
+                    }
+                }
+            ]
 
         }, { timestamps: true });
 
