@@ -5,6 +5,11 @@ class Post {
 
     initSchema() {
         const schema = new mongoose.Schema({
+            author: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'user',
+                required: true,
+            },
             title: {
                 type: String,
                 required: true,

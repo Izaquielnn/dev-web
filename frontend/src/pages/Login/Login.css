@@ -1,0 +1,64 @@
+.Modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.Content {
+    width: 600px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 20px;
+}
+
+.ActionButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+input {
+    background-color: #EDEDED;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    outline-color: #3F6345;
+    color: #3F6345;
+    font-size: 26px;
+    margin: 5px 0;
+}
+
+
+.ActionButtons button {
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.logo {
+    width: 250px;
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+span {
+    margin-top: 20px;
+}

@@ -13,7 +13,7 @@ function Post(props) {
         <div className='Post'>
             <div className='IconText'>
                 <img alt='Avatar' src={avatar}></img>
-                <span>{props.post.author}</span>
+                <span>{props.post.author.name}</span>
             </div>
             <h1>{props.post.title}</h1>
             <p>{props.post.description}</p>

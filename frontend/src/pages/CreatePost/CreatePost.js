@@ -21,8 +21,8 @@ function CreatePostModal(props) {
         if (Object.keys(errors).length === 0) {
             let post = { title, description, imgUrl };
             console.log(post);
-            await PlantinhaAPI.createPost(post);
-            navigate('/');
+            let created = await PlantinhaAPI.createPost(post);
+            if (created) navigate('/');
         }
     }
 
@@ -36,7 +36,7 @@ function CreatePostModal(props) {
             err['description'] = 'Descrição muito curta'
         }
 
-        if (!/https?:\/\/.+\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(imgUrl)) {
+        if (imgUrl.length < 3) {
             err['imgUrl'] = 'Url inválida'
         }
 

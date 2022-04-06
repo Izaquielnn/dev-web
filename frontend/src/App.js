@@ -4,6 +4,8 @@ import Feed from './pages/Feed/Feed';
 import Header from './pages/Header/Header';
 import CreatePostModal from './pages/CreatePost/CreatePost';
 import { Routes, Route } from "react-router-dom";
+import Login from './pages/Login/Login';
+import { useEffect } from 'react';
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
           </>
         } />
         <Route path="create" element={<CreatePostModal />} />
+        <Route path="login" element={<Login />} />
       </Routes>
 
     </div>

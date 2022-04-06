@@ -1,3 +1,5 @@
+import AuthService from "./AuthService";
+
 class PlantinhaAPI {
     constructor() {
         this.apiURL = "http://localhost:3001";
@@ -11,17 +13,39 @@ class PlantinhaAPI {
     }
 
     async createPost(post) {
-        let response = await fetch(`${this.apiURL}/posts`, {
+        let user = AuthService.getLoggedUser();
+        try {
+            let response = await fetch(`${this.apiURL}/posts`, {
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${user?.token}`
+                },
+                method: "POST",
+                body: JSON.stringify(post)
+            });
+            let responseJson = await response.json();
+            return responseJson.item;
+
+        } catch (error) {
+            return false;
+        }
+
+    }
+
+    async login(user) {
+        let response = await fetch(`${this.apiURL}/users/auth`, {
             headers: {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json'
             },
             method: "POST",
-            body: JSON.stringify(post)
+            body: JSON.stringify(user)
         });
         let responseJson = await response.json();
-        return responseJson.item;
+        return responseJson;
     }
+
 }
 
 export default new PlantinhaAPI();
