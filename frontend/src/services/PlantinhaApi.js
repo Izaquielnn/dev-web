@@ -46,6 +46,19 @@ class PlantinhaAPI {
         return responseJson;
     }
 
+    async register(user) {
+        let response = await fetch(`${this.apiURL}/users`, {
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(user)
+        });
+        let responseJson = await response.json();
+        return responseJson;
+    }
+
 }
 
 export default new PlantinhaAPI();

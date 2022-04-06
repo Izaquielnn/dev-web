@@ -47,6 +47,10 @@ function Login(props) {
                 <div className='ActionButtons'>
                     <button onClick={login}>Login</button>
                 </div>
+                <span>Ainda não possui uma conta?</span>
+                <Link to={'/singup'}>
+                    <p>Cadastrar</p>
+                </Link>
             </div>
         </div>
     );

@@ -5,6 +5,7 @@ import Header from './pages/Header/Header';
 import CreatePostModal from './pages/CreatePost/CreatePost';
 import { Routes, Route } from "react-router-dom";
 import Login from './pages/Login/Login';
+import SingUp from './pages/SingUp/SingUp';
 import { useEffect } from 'react';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         } />
         <Route path="create" element={<CreatePostModal />} />
         <Route path="login" element={<Login />} />
+        <Route path="singup" element={<SingUp />} />
       </Routes>
 
     </div>
