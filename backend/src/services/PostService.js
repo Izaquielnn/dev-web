@@ -13,7 +13,10 @@ class PostService {
     async getAll(query) {
         try {
 
-            let items = await this.model.find(query).populate('author').populate('comments.author');
+            let items = await this.model.find(query)
+                .populate('author')
+                .populate('comments.author')
+                .sort({ 'createdAt': -1 });
             let total = await this.model.count();
 
             return {
@@ -52,7 +55,12 @@ class PostService {
 
     async comment(id, data) {
         try {
-            let item = await this.model.findByIdAndUpdate(id, { $push: { comments: data } }, { new: true });
+            let item = await this.model.findByIdAndUpdate(
+                id,
+                { $push: { comments: data } }, { new: true }
+            )
+                .populate('author')
+                .populate('comments.author');
             if (!item) return { error: true, statusCode: 404 };
             return {
                 error: false,

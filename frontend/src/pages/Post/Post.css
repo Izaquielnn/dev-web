@@ -28,3 +28,18 @@ p {
     justify-content: space-between;
 
 }
+
+.Comments {
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.Comments span {
+    font-weight: bold;
+}
+
+.CommentContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

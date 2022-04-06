@@ -33,6 +33,27 @@ class PlantinhaAPI {
 
     }
 
+    async createComment(comment, postId) {
+        let user = AuthService.getLoggedUser();
+        try {
+            let response = await fetch(`${this.apiURL}/posts/${postId}`, {
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${user?.token}`
+                },
+                method: "POST",
+                body: JSON.stringify({ comment })
+            });
+            let responseJson = await response.json();
+            return responseJson.item;
+
+        } catch (error) {
+            return false;
+        }
+
+    }
+
     async login(user) {
         let response = await fetch(`${this.apiURL}/users/auth`, {
             headers: {
